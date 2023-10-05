@@ -177,3 +177,20 @@ for flavor in $flavors; do
 
     fi
 done
+
+
+
+# image cleanup
+
+images=$(openstack image list -c ID -c Name | grep -ve ID -e Name | grep tempest | awk '{print $2}')
+
+for image in $images; do
+    if openstack image delete $image; then
+        echo "image $image has been deleted"
+    else
+        echo "image $image has not been deleted"
+    fi
+done
+
+
+
