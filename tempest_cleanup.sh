@@ -87,8 +87,8 @@ done
 
 # networks & subnetworks cleanup
 
-subnets=$(openstack subnet list | grep tempest | awk '{print $4}')
-networks=$(openstack network list | grep tempest | awk '{print $4}')
+subnets=$(openstack subnet list | grep tempest | awk '{print $2}')
+networks=$(openstack network list | grep tempest | awk '{print $2}')
 
 
 for subnet in $sunbets; do
@@ -96,7 +96,7 @@ for subnet in $sunbets; do
 done
 
 for net in $networks; do
-    openstack network delete $network;
+    openstack network delete $net;
 done
 
 
