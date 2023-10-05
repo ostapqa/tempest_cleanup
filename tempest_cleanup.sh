@@ -91,7 +91,7 @@ subnets=$(openstack subnet list | grep tempest | awk '{print $2}')
 networks=$(openstack network list | grep tempest | awk '{print $2}')
 
 
-for subnet in $sunbets; do
+for subnet in $subnets; do
     openstack subnet delete $subnet;
 done
 
