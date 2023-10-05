@@ -1,6 +1,6 @@
 # OpenStack Tempest Cleanup Script
 
-This script automates the cleanup of OpenStack resources created during testing, using the OpenStack CLI.
+This script automates the cleanup of OpenStack resources created during testing via Tempest framework, using the OpenStack CLI.
 
 ## Prerequisites
 
