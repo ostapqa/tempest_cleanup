@@ -199,7 +199,7 @@ done
 keypairs=$(openstack keypair list -c ID -c Name | grep -ve ID -e Name | grep tempest | awk '{print $2}')
 
 for keypair in $keypairs; do
-    if openstack keypair delete $image; then
+    if openstack keypair delete $keypair; then
         echo "keypair $keypair has been deleted"
     else
         echo "keypair $keypair has not been deleted"
