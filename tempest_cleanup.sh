@@ -1,8 +1,12 @@
 #!/bin/bash
 
-source /home/ostap/Desktop/sasha-source
 
+if [ -z "$1" ]; then
+        echo "Usage bash $0 <path to source file>"
+        exit 1
+fi
 
+source "$1"
 
 # server cleanup
 servers=$(openstack server list -c Name -c ID | grep tempest | awk '{print $2}')
